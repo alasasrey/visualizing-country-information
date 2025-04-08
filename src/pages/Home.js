@@ -9,6 +9,9 @@ const Home = () => {
         axios.get("https://countries-api-abhishek.vercel.app/countries/Afghanistan")
             .then((res) => {
                 setCountry(res.data[0]);
+
+                console.log(res.data[0])
+
             })
             .catch((err) => console.error(err));
     }, []);
