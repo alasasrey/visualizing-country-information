@@ -3,19 +3,17 @@ import { fetchCountries } from '../api';
 import CountryDetails from '../components/countryDetails';
 
 const Home = () => {
-    const [countries, setCountries] = useState([]);
-    const [afghanistan, setAfghanistan] = useState(null);
+    const [country, setCountry] = useState([]);
 
     useEffect(() => {
         const getData = async () => {
             const fetchCountryData = await fetchCountries();
             const data = fetchCountryData.data;
-            setCountries(data);
-            // const afg = data.find(country => country.name === 'Afghanistan');
-            setAfghanistan(data.name);
+            setCountry(data);
 
+            // setCoordinates(data.coordinates.latitude + " " + data.coordinates.longitude);
             console.dir(data);
-            console.log(data.flag);
+            console.log(data.coordinates.latitude);
 
         };
         getData();
@@ -23,7 +21,7 @@ const Home = () => {
 
     return (
         <main className="max-w-4xl mx-auto p-4">
-            <CountryDetails country={afghanistan} />
+            <CountryDetails country={country} />
         </main>
     );
 };
