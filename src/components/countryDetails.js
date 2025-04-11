@@ -1,6 +1,5 @@
 import Flag from './flag';
 import Borders from './borders';
-import Coordinates from './coordinates';
 
 const CountryDetails = ({ country }) => {
     // if there is no country data it will display the loading text
@@ -19,9 +18,7 @@ const CountryDetails = ({ country }) => {
             <p><strong>Subregion:</strong> {country.subregion}</p>
             <p><strong>Population:</strong> {country.population}</p>
             <p><strong>Area:</strong> {country.area} km²</p>
-            {/* <p><strong>Coordinates:</strong> {country.coordinates.latitude + " " + country.coordinates.longitude} </p> */}
-            {/* <p><strong>Coordinates:</strong> {country.coordinates} </p> */}
-            <Coordinates coordinates={country.coordinates} />
+            <p><strong>Coordinates:</strong> {country.coordinates.latitude + ", " + country.coordinates.longitude} </p>
             <p><strong>Timezones:</strong> {country.timezones}</p>
             <p><strong>Currency:</strong> {country.currency}</p>
             <p><strong>Languages:</strong> {country.languages}</p>
