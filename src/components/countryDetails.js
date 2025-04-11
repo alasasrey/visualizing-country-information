@@ -6,17 +6,17 @@ const CountryDetails = ({ country }) => {
 
     return (
         <div className="p-4">
-            <h2 className="text-2xl font-bold mb-2">{country.name.common}</h2>
-            <Flag src={country.flags.svg} alt={country.name.common} />
+            <h2 className="text-2xl font-bold mb-2">{country.name}</h2>
+            <Flag src={country.flags} alt={country.name} />
             <p><strong>Capital:</strong> {country.capital?.[0]}</p>
             <p><strong>Region:</strong> {country.region}</p>
             <p><strong>Subregion:</strong> {country.subregion}</p>
-            <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
+            <p><strong>Population:</strong> {country.population}</p>
             <p><strong>Area:</strong> {country.area} km²</p>
-            <p><strong>Coordinates:</strong> {country.latlng.join(', ')}</p>
-            <p><strong>Timezones:</strong> {country.timezones.join(', ')}</p>
-            <p><strong>Currency:</strong> {Object.values(country.currencies)[0].name}</p>
-            <p><strong>Languages:</strong> {Object.values(country.languages).join(', ')}</p>
+            <p><strong>Coordinates:</strong> {country.coordinates}</p>
+            <p><strong>Timezones:</strong> {country.timezones}</p>
+            <p><strong>Currency:</strong> {country.currencies}</p>
+            <p><strong>Languages:</strong> {country.languages}</p>
             <Borders borders={country.borders} />
         </div>
     );

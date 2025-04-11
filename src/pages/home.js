@@ -8,10 +8,15 @@ const Home = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const data = await fetchCountries();
+            const fetchCountryData = await fetchCountries();
+            const data = fetchCountryData.data;
             setCountries(data);
-            const afg = data.find(c => c.name.common === 'Afghanistan');
-            setAfghanistan(afg);
+            // const afg = data.find(country => country.name === 'Afghanistan');
+            setAfghanistan(data.name);
+
+            console.dir(data);
+            console.log(data.flag);
+
         };
         getData();
     }, []);
