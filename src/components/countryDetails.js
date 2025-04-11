@@ -6,6 +6,10 @@ const CountryDetails = ({ country }) => {
     // if there is no country data it will display the loading text
     if (!country) return <p>Loading...</p>;
 
+    // const coordinateText = country
+    //     ? Latitude : ${ country.coordinates.latitude }, Longitude: ${ country.coordinates.longitude }
+    //         : "N/A";
+
     return (
         <div className="p-4">
             <h2 className="text-2xl font-bold mb-2">{country.name}</h2>
