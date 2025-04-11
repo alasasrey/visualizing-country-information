@@ -10,7 +10,7 @@ const CountryDetails = ({ country }) => {
         <div className="p-4">
             <h2 className="text-2xl font-bold mb-2">{country.name}</h2>
             <Flag src={country.flag} alt={country.name} />
-            <p><strong>Capital:</strong> {country.capital?.[0]}</p>
+            <p><strong>Capital:</strong> {country.capital}</p>
             <p><strong>Region:</strong> {country.region}</p>
             <p><strong>Subregion:</strong> {country.subregion}</p>
             <p><strong>Population:</strong> {country.population}</p>
